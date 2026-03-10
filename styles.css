@@ -143,6 +143,18 @@ header .container nav > div{display:flex;align-items:center;justify-content:spac
 .card-actions .price{font-weight:700;color:#241a17;margin:0}
 .card-actions .buy-btn{padding:10px 14px;border-radius:10px}
 
+/* Allow card actions to wrap on narrow screens and stack vertically for small devices */
+.card-actions{flex-wrap:wrap}
+@media(max-width:480px){
+  .card-actions{flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:12px}
+  .card-actions .price{order:0}
+  .card-actions .buy-btn{order:1}
+}
+
+/* Muted inline links used in contact */
+.muted-link{color:inherit;text-decoration:underline}
+.muted{color:var(--muted-text)}
+
 /* Ensure buy buttons are reachable on touch devices and accessible */
 .buy-btn{min-height:40px;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;font-size:0.95rem}
 .buy-btn:focus{outline:3px solid rgba(212,163,115,0.28);outline-offset:3px}
