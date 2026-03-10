@@ -90,6 +90,13 @@ header .container nav > div{display:flex;align-items:center;justify-content:spac
   .product-item{align-items:flex-start}
 }
 .nav-links-inline{display:none}
+.skip-link{position:absolute;left:12px;top:12px;background:#241a17;color:#fff;padding:8px 12px;border-radius:8px;z-index:999;transform:translateY(-120%);transition:transform .18s ease;}
+.skip-link:focus{transform:none;outline:3px solid var(--accent);}
+
+@media(min-width:800px){
+  .nav-links-inline{display:flex;gap:12px;align-items:center;margin-left:18px}
+  .nav-links-inline .nav-link{padding:8px 10px}
+}
 .nav-link{color:inherit;text-decoration:none;padding:8px 10px;border-radius:6px}
 .menu-button svg{width:26px;height:20px;display:block}
 

@@ -75,7 +75,8 @@
         a.href = 'productos.html#' + p.id;
         a.setAttribute('data-anchor', '#' + p.id);
         a.setAttribute('data-no-fade','1');
-        a.innerHTML = `<div class="product-item"><img src="imaganes/${p.img}" alt=""><div class="meta"><h4 data-i18n="${p.id}.name"></h4><p class="meta-desc" data-i18n="${p.id}.desc"></p><span class="preview-price">€${p.price.toFixed(2)}</span></div></div>`;
+        // use a descriptive alt and include dimensions to improve layout stability
+        a.innerHTML = `<div class="product-item"><img src="imaganes/${p.img}" alt="Preview ${p.id}" width="160" height="100"><div class="meta"><h4 data-i18n="${p.id}.name"></h4><p class="meta-desc" data-i18n="${p.id}.desc"></p><span class="preview-price">€${p.price.toFixed(2)}</span></div></div>`;
         preview.appendChild(a);
         added++;
       }

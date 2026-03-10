@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PLAER DOLÇ</title>
 <meta name="description" content="Pastelería francesa artesanal especializada en mousse, tarta de limón y tartas de frutas frescas.">
+	<!-- Open Graph / Social metadata -->
+	<meta property="og:title" content="PLAER DOLÇ — Pastelería francesa artesanal">
+	<meta property="og:description" content="Mousses, tartas y postres artesanales preparados cada día con ingredientes seleccionados.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="imaganes/1.jpeg">
+	<meta property="og:url" content="/">
 <meta name="theme-color" content="#faf7f2">
 <link rel="canonical" href="/">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -15,10 +21,10 @@
 	"name": "PLAER DOLÇ",
 	"description": "Pastelería francesa artesanal: mousses, tartas de limón y tartas de frutas frescas.",
 	"url": "./",
-	"telephone": "+34 652 72 49 69",
+	"telephone": "+34 600 000 000",
 	"address": {
 		"@type": "PostalAddress",
-		"streetAddress": " CALLE PRINCIPAL 123",
+		"streetAddress": "Calle Principal 123",
 		"addressCountry": "ES"
 	}
 }
@@ -26,6 +32,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip-link" href="#productos">Saltar al contenido</a>
 <div class="site">
 
 <!-- Intro overlay -->
@@ -50,6 +57,11 @@
 <nav>
 				<div class="header-row">
 						<a class="logo" href="index.html" aria-label="Ir al inicio">PLAER DOLÇ</a>
+						<div class="nav-links-inline">
+							<a class="nav-link" href="productos.html">Especialidades</a>
+							<a class="nav-link" href="nosotros.html">Nosotros</a>
+							<a class="nav-link" href="contacto.html">Contacto</a>
+						</div>
 						<div class="lang-selector" id="lang-selector">
 							<button class="lang-button" id="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma"><span id="lang-current">ES</span></button>
 							<div class="lang-menu" id="lang-menu" role="menu" aria-hidden="true">
@@ -150,14 +162,14 @@
 		<!-- Visible introduction copy (persistent) -->
 		<section class="intro-copy container">
 			<div class="intro-text-block">
-				<h2>PLAER DOLÇ</h2>
-				<p>Plaer dolç es una pastelería artesanal inspirada en la tradición de la repostería francesa. Cada receta está elaborada con ingredientes de calidad y cuidando cada detalle para ofrecer sabores delicados, elegantes y auténticos.</p>
+				<h2 data-i18n="intro.title">PLAER DOLÇ</h2>
+				<p data-i18n="intro.p1"></p>
 
-				<p>Nos especializamos en dulces clásicos de inspiración francesa, preparados de forma artesanal para garantizar una experiencia única en cada bocado.</p>
+				<p data-i18n="intro.p2"></p>
 
-				<p>En Plaer dolç creemos que el placer de un buen postre debe ser accesible y cómodo, por eso ofrecemos un servicio online con envío a domicilio, para que puedas disfrutar de nuestros dulces sin salir de casa.</p>
+				<p data-i18n="intro.p3"></p>
 
-				<p>Déjate llevar por el placer de lo dulce.</p>
+				<p data-i18n="intro.p4"></p>
 			</div>
 		</section>
 
