@@ -76,7 +76,7 @@
         a.setAttribute('data-anchor', '#' + p.id);
         a.setAttribute('data-no-fade','1');
         // use a descriptive alt and include dimensions to improve layout stability
-        a.innerHTML = `<div class="product-item"><img src="imaganes/${p.img}" alt="Preview ${p.id}" width="160" height="100"><div class="meta"><h4 data-i18n="${p.id}.name"></h4><p class="meta-desc" data-i18n="${p.id}.desc"></p><span class="preview-price">€${p.price.toFixed(2)}</span></div></div>`;
+        a.innerHTML = `<div class="product-item"><img src="./imaganes/${p.img}" alt="Preview ${p.id}" width="160" height="100"><div class="meta"><h4 data-i18n="${p.id}.name"></h4><p class="meta-desc" data-i18n="${p.id}.desc"></p><span class="preview-price">€${p.price.toFixed(2)}</span></div></div>`;
         preview.appendChild(a);
         added++;
       }
@@ -149,6 +149,45 @@
   // Image focus: allow per-image data-focus to set object-position
   document.querySelectorAll('img[data-focus]').forEach(img=>{ img.style.objectPosition = img.getAttribute('data-focus'); });
 
+})();
+
+// Image load diagnostics and fallback attempts
+(function(){
+  function tryAlternatives(img){
+    const src = img.getAttribute('src') || '';
+    const alts = [];
+    if(src.startsWith('./')) alts.push(src.slice(2)); else alts.push('./'+src);
+    // try correct-spelling folder
+    if(src.includes('imaganes')) alts.push(src.replace('imaganes','imagenes'));
+    else alts.push(src.replace('imagenes','imaganes'));
+    // try absolute root (best-effort)
+    if(!src.startsWith('/')) alts.push('/' + src.replace(/^\.\//,''));
+
+    let tried = 0;
+    function attemptNext(){
+      if(tried >= alts.length) return markBroken();
+      const next = alts[tried++];
+      const test = new Image();
+      test.onload = function(){ img.src = next; img.style.opacity = 1; img.style.border = '1px solid rgba(0,0,0,0.06)'; };
+      test.onerror = attemptNext;
+      test.src = next;
+    }
+
+    function markBroken(){
+      img.style.outline = '3px solid rgba(212,163,115,0.25)';
+      img.style.background = 'linear-gradient(180deg,#fffaf6, #fffaf6)';
+      console.warn('Image failed to load:', src, 'tried:', alts);
+    }
+
+    attemptNext();
+  }
+
+  window.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('img').forEach(img=>{
+      if(img.complete && img.naturalWidth===0){ tryAlternatives(img); }
+      img.addEventListener('error', function(){ tryAlternatives(img); });
+    });
+  });
 })();
 
 // --- Translations (i18n) ---
