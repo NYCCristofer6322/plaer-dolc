@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros · PLAER DOLÇ</title>
+<meta name="description" content="Conoce la filosofía de PLAER DOLÇ: tradición y producto local.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+<header>
+<div class="container">
+<nav>
+				<div class="header-row">
+						<a class="logo" href="index.html" aria-label="Ir al inicio">PLAER DOLÇ</a>
+						<div class="lang-selector" id="lang-selector">
+							<button class="lang-button" id="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma"><span id="lang-current">ES</span></button>
+							<div class="lang-menu" id="lang-menu" role="menu" aria-hidden="true">
+								<button role="menuitem" data-lang="fr">Français</button>
+								<button role="menuitem" data-lang="ca">Català</button>
+								<button role="menuitem" data-lang="es">Español</button>
+								<button role="menuitem" data-lang="en">English</button>
+							</div>
+						</div>
+						<button class="menu-button" id="menu-button" aria-controls="menu-panel" aria-expanded="false" aria-haspopup="true" aria-label="Abrir menú principal">
+			  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<path d="M3 6h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 12h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 18h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  </svg>
+			</button>
+		</div>
+		<div class="menu-panel" id="menu-panel" role="menu" aria-hidden="true">
+			<a class="nav-link" href="productos.html" role="menuitem" data-i18n="nav.specialties">Especialidades</a>
+			<a class="nav-link" href="nosotros.html" role="menuitem" data-i18n="nav.about">Nosotros</a>
+			<a class="nav-link" href="contacto.html" role="menuitem" data-i18n="nav.contact">Contacto</a>
+		</div>
+</nav>
+</div>
+</header>
+
+<main>
+<section id="nosotros" class="section container">
+	<h2 class="reveal section-title" data-i18n="about.title">Nuestra Historia y Filosofía</h2>
+	<p class="reveal justified" data-i18n="about.p1">PLAER DOLÇ nace de la pasión por la pastelería tradicional francesa y del respeto por la materia prima. Cada receta parte de técnicas clásicas —cremas, masas laminadas y montajes delicados— y se adapta con criterio para lograr sabores claros, texturas equilibradas y una presentación atemporal. Nuestro obrador trabaja a diario con proveedores locales para seleccionar frutas de temporada, mantequillas y chocolates de calidad, cuidando siempre el origen y la trazabilidad.</p>
+
+	<div class="mosaic">
+		<article class="mosaic-item">
+			<div class="mosaic-img"><img src="imaganes/5.jpeg" alt="Chef trabajando delicadamente" loading="lazy" decoding="async"></div>
+			<div class="mosaic-text">
+				<h3 data-i18n="about.t1">Obrador y Técnica</h3>
+				<p data-i18n="about.p2">Nuestro obrador combina técnicas artesanales con procesos controlados para garantizar consistencia y frescura. Cada producto se prepara pensando en la textura y el equilibrio entre dulzor y acidez. La terminación es meticulosa: glaseados, brillo y montaje respetan la estética clásica francesa, siempre con un toque contemporáneo.</p>
+			</div>
+		</article>
+
+		<article class="mosaic-item reverse">
+			<div class="mosaic-img"><img src="imaganes/6.jpeg" alt="Ingredientes frescos: frutas y mantequilla" loading="lazy" decoding="async"></div>
+			<div class="mosaic-text">
+				<h3 data-i18n="about.t2">Ingredientes Seleccionados</h3>
+				<p data-i18n="about.p3">Trabajamos con ingredientes cuidadosamente seleccionados: frutas de temporada, mantequillas de alta calidad y chocolates con perfil aromático definido. Esta selección nos permite ofrecer productos con identidad y un sabor limpio, evitando aditivos innecesarios y priorizando el producto natural.</p>
+			</div>
+		</article>
+
+		<article class="mosaic-item">
+			<div class="mosaic-img"><img src="imaganes/7.jpeg" alt="Detalle de baño y presentación" loading="lazy" decoding="async"></div>
+			<div class="mosaic-text">
+				<h3 data-i18n="about.t3">Presentación y Experiencia</h3>
+				<p data-i18n="about.p4">La presentación es parte de la experiencia. Estudiamos el contraste de texturas y la armonía cromática para que cada pieza invite a ser probada. Además, cuidamos la experiencia de compra: envases sostenibles, información clara sobre alérgenos y un servicio atento y profesional.</p>
+			</div>
+		</article>
+
+		<article class="mosaic-item reverse">
+			<div class="mosaic-img"><img src="imaganes/1.jpeg" alt="Selección de tartas en vitrina" loading="lazy" decoding="async"></div>
+			<div class="mosaic-text">
+				<h3 data-i18n="about.t4">Compromiso con la Sostenibilidad</h3>
+				<p data-i18n="about.p5">Nos comprometemos con prácticas responsables: selección de proveedores locales cuando es posible, reducción de desperdicio en el obrador y embalajes pensados para minimizar el impacto ambiental. Creemos que la pastelería fina y la responsabilidad pueden ir de la mano.</p>
+			</div>
+		</article>
+	</div>
+
+</section>
+</main>
+
+<footer>
+	<div class="container footer-container">
+		<p data-i18n="footer.copy">© 2026 PLAER DOLÇ · Pastelería francesa artesanal</p>
+		<p style="font-size:0.9rem;color:#bbb" data-i18n="footer.follow">Síguenos en Instagram para ver creaciones diarias</p>
+	</div>
+</footer>
+
+<script src="main.js" defer></script>
+</div>
+</body>
+</html>

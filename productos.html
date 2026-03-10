@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especialidades · PLAER DOLÇ</title>
+<meta name="description" content="Especialidades de PLAER DOLÇ: mousse, tartas y más.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+<header>
+<div class="container">
+<nav>
+				<div class="header-row">
+						<a class="logo" href="index.html" aria-label="Ir al inicio">PLAER DOLÇ</a>
+						<div class="lang-selector" id="lang-selector">
+							<button class="lang-button" id="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma"><span id="lang-current">ES</span></button>
+							<div class="lang-menu" id="lang-menu" role="menu" aria-hidden="true">
+								<button role="menuitem" data-lang="fr">Français</button>
+								<button role="menuitem" data-lang="ca">Català</button>
+								<button role="menuitem" data-lang="es">Español</button>
+								<button role="menuitem" data-lang="en">English</button>
+							</div>
+						</div>
+						<button class="menu-button" id="menu-button" aria-controls="menu-panel" aria-expanded="false" aria-haspopup="true" aria-label="Abrir menú principal">
+			  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<path d="M3 6h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 12h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 18h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  </svg>
+			</button>
+		</div>
+		<div class="menu-panel" id="menu-panel" role="menu" aria-hidden="true">
+			<a class="nav-link" href="productos.html" role="menuitem" data-i18n="nav.specialties">Especialidades</a>
+			<a class="nav-link" href="nosotros.html" role="menuitem" data-i18n="nav.about">Nosotros</a>
+			<a class="nav-link" href="contacto.html" role="menuitem" data-i18n="nav.contact">Contacto</a>
+		</div>
+</nav>
+</div>
+</header>
+
+<main>
+<section id="productos" class="section container">
+<h2 class="reveal section-title" data-i18n="products.title">Especialidades</h2>
+ 
+ <div class="grid cards">
+
+	<div class="card" id="p1">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/1.jpeg" alt="Mousse" />
+		</picture>
+		<h3 class="reveal" data-i18n="p1.name">Mousse de Chocolate</h3>
+		<p data-i18n="p1.desc">Textura sedosa y sabor profundo.</p>
+		<div class="card-actions"><span class="price">€14.50</span><button class="buy-btn" data-id="p1" data-name="Mousse de Chocolate" data-price="14.5" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p2">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/2.jpeg" alt="Tarta de Limón" />
+		</picture>
+		<h3 class="reveal" data-i18n="p2.name">Tarta de Limón</h3>
+		<p data-i18n="p2.desc">Crema de limón sedosa y base crujiente.</p>
+		<div class="card-actions"><span class="price">€9.90</span><button class="buy-btn" data-id="p2" data-name="Tarta de Limón" data-price="9.9" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p3">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/3.jpeg" alt="Tarta de Frutas" />
+		</picture>
+		<h3 class="reveal" data-i18n="p3.name">Tarta de Frutas</h3>
+		<p data-i18n="p3.desc">Frutas de temporada y crema ligera.</p>
+		<div class="card-actions"><span class="price">€22.00</span><button class="buy-btn" data-id="p3" data-name="Tarta de Frutas" data-price="22.0" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p4">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/4.jpeg" alt="Selección del Chef" />
+		</picture>
+		<h3 class="reveal" data-i18n="p4.name">Selección del Chef</h3>
+		<p data-i18n="p4.desc">Selección variada y personalizada.</p>
+		<div class="card-actions"><span class="price">€6.75</span><button class="buy-btn" data-id="p4" data-name="Selección del Chef" data-price="6.75" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p5">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/5.jpeg" alt="Tarta Clásica" />
+		</picture>
+		<h3 class="reveal" data-i18n="p5.name">Tarta Clásica</h3>
+		<p data-i18n="p5.desc">Receta tradicional con toque moderno.</p>
+		<div class="card-actions"><span class="price">€22.50</span><button class="buy-btn" data-id="p5" data-name="Tarta Clásica" data-price="22.5" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p6">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/6.jpeg" alt="Pack Surtido" />
+		</picture>
+		<h3 class="reveal" data-i18n="p6.name">Pack Surtido</h3>
+		<p data-i18n="p6.desc">Cuatro porciones surtidas, ideal para compartir.</p>
+		<div class="card-actions"><span class="price">€16.80</span><button class="buy-btn" data-id="p6" data-name="Pack Surtido" data-price="16.8" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p7">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/7.jpeg" alt="Mini Tartas" />
+		</picture>
+		<h3 class="reveal" data-i18n="p7.name">Mini Tartas</h3>
+		<p data-i18n="p7.desc">Presentación individual para eventos.</p>
+		<div class="card-actions"><span class="price">€7.95</span><button class="buy-btn" data-id="p7" data-name="Mini Tartas" data-price="7.95" data-i18n="buy">Comprar</button></div>
+	</div>
+
+	<div class="card" id="p8">
+		<picture>
+			<img loading="lazy" decoding="async" width="600" height="420" src="imaganes/1.jpeg" alt="Postre Gourmet" />
+		</picture>
+		<h3 class="reveal" data-i18n="p8.name">Postre Gourmet</h3>
+		<p data-i18n="p8.desc">Edición limitada con técnicas de alta pastelería.</p>
+		<div class="card-actions"><span class="price">€24.90</span><button class="buy-btn" data-id="p8" data-name="Postre Gourmet" data-price="24.9" data-i18n="buy">Comprar</button></div>
+	</div>
+
+ </div>
+
+</section>
+</main>
+
+<footer>
+	<div class="container footer-container">
+		<p data-i18n="footer.copy">© 2026 PLAER DOLÇ · Pastelería francesa artesanal</p>
+		<p style="font-size:0.9rem;color:#bbb" data-i18n="footer.follow">Síguenos en Instagram para ver creaciones diarias</p>
+	</div>
+</footer>
+
+ 
+<script src="main.js" defer></script>
+</div>
+</body>
+</html>

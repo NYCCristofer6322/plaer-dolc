@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAER DOLÇ</title>
+<meta name="description" content="Pastelería francesa artesanal especializada en mousse, tarta de limón y tartas de frutas frescas.">
+<meta name="theme-color" content="#faf7f2">
+<link rel="canonical" href="/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Bakery",
+	"name": "PLAER DOLÇ",
+	"description": "Pastelería francesa artesanal: mousses, tartas de limón y tartas de frutas frescas.",
+	"url": "./",
+	"telephone": "+34 600 000 000",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Calle Principal 123",
+		"addressCountry": "ES"
+	}
+}
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="site">
+
+<!-- Intro overlay -->
+<div class="intro-overlay" id="intro-overlay" aria-hidden="false">
+	<div class="brand">
+		<h1>PLAER DOLÇ</h1>
+		<small>Pastelería francesa artesanal</small>
+		<div class="intro-text">
+			<p>Plaer dolç es una pastelería artesanal inspirada en la tradición de la repostería francesa. Cada receta está elaborada con ingredientes de calidad y cuidando cada detalle para ofrecer sabores delicados, elegantes y auténticos.</p>
+
+			<p>Nos especializamos en dulces clásicos de inspiración francesa, preparados de forma artesanal para garantizar una experiencia única en cada bocado.</p>
+
+			<p>En Plaer dolç creemos que el placer de un buen postre debe ser accesible y cómodo, por eso ofrecemos un servicio online con envío a domicilio, para que puedas disfrutar de nuestros dulces sin salir de casa.</p>
+
+			<p>Déjate llevar por el placer de lo dulce.</p>
+		</div>
+	</div>
+</div>
+
+<header>
+<div class="container">
+<nav>
+				<div class="header-row">
+						<a class="logo" href="index.html" aria-label="Ir al inicio">PLAER DOLÇ</a>
+						<div class="lang-selector" id="lang-selector">
+							<button class="lang-button" id="lang-button" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma"><span id="lang-current">ES</span></button>
+							<div class="lang-menu" id="lang-menu" role="menu" aria-hidden="true">
+								<button role="menuitem" data-lang="fr">Français</button>
+								<button role="menuitem" data-lang="ca">Català</button>
+								<button role="menuitem" data-lang="es">Español</button>
+								<button role="menuitem" data-lang="en">English</button>
+							</div>
+						</div>
+						<button class="menu-button" id="menu-button" aria-controls="menu-panel" aria-expanded="false" aria-haspopup="true" aria-label="Abrir menú principal">
+			  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<path d="M3 6h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 12h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M3 18h18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			  </svg>
+			</button>
+		</div>
+		<div class="menu-panel" id="menu-panel" role="menu" aria-hidden="true">
+						<a class="nav-link" href="productos.html" role="menuitem" data-i18n="nav.specialties">Especialidades</a>
+						<a class="nav-link" href="nosotros.html" role="menuitem" data-i18n="nav.about">Nosotros</a>
+						<a class="nav-link" href="contacto.html" role="menuitem" data-i18n="nav.contact">Contacto</a>
+
+						<hr style="margin:8px 0;border:none;border-top:1px solid #f0ebe6">
+						<div class="products-preview" aria-hidden="false">
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p1" data-anchor="#p1" data-no-fade="1">
+																	<img src="imaganes/2.jpeg" alt="Mousse de Chocolate" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p1.name">Mousse de Chocolate</h4><p data-i18n="p1.desc">Textura sedosa y sabor profundo.</p><span class="price">€9.50</span></div>
+																</a>
+																<button class="buy-btn" data-id="p1" data-name="Mousse de Chocolate" data-price="9.5" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p2" data-anchor="#p2" data-no-fade="1">
+																	<img src="imaganes/3.jpeg" alt="Tarta de Limón" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p2.name">Tarta de Limón</h4><p data-i18n="p2.desc">Crema de limón sedosa y base crujiente.</p><span class="price">€12.00</span></div>
+																</a>
+																<button class="buy-btn" data-id="p2" data-name="Tarta de Limón" data-price="12" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p3" data-anchor="#p3" data-no-fade="1">
+																	<img src="imaganes/4.jpeg" alt="Tarta de Frutas" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p3.name">Tarta de Frutas</h4><p data-i18n="p3.desc">Frutas de temporada y crema ligera.</p><span class="price">€14.75</span></div>
+																</a>
+																<button class="buy-btn" data-id="p3" data-name="Tarta de Frutas" data-price="14.75" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p4" data-anchor="#p4" data-no-fade="1">
+																	<img src="imaganes/5.jpeg" alt="Chef Pastelero" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p4.name">Selección del Chef</h4><p data-i18n="p4.desc">Selección variada y personalizada.</p><span class="price">€19.90</span></div>
+																</a>
+																<button class="buy-btn" data-id="p4" data-name="Selección del Chef" data-price="19.9" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p5" data-anchor="#p5" data-no-fade="1">
+																	<img src="imaganes/1.jpeg" alt="Vitrina de Tartas" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p5.name">Tarta Clásica</h4><p data-i18n="p5.desc">Receta tradicional con toque moderno.</p><span class="price">€22.50</span></div>
+																</a>
+																<button class="buy-btn" data-id="p5" data-name="Tarta Clásica" data-price="22.5" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p6" data-anchor="#p6" data-no-fade="1">
+																	<img src="imaganes/6.jpeg" alt="Ingredientes frescos" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p6.name">Pack Surtido</h4><p data-i18n="p6.desc">Cuatro porciones surtidas.</p><span class="price">€16.80</span></div>
+																</a>
+																<button class="buy-btn" data-id="p6" data-name="Pack Surtido" data-price="16.8" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p7" data-anchor="#p7" data-no-fade="1">
+																	<img src="imaganes/7.jpeg" alt="Detalle de presentación" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p7.name">Mini Tartas</h4><p data-i18n="p7.desc">Presentación individual para eventos.</p><span class="price">€7.95</span></div>
+																</a>
+																<button class="buy-btn" data-id="p7" data-name="Mini Tartas" data-price="7.95" data-i18n="buy">Comprar</button>
+														</div>
+														<div class="product-item">
+																<a class="product-link" href="productos.html#p8" data-anchor="#p8" data-no-fade="1">
+																	<img src="imaganes/2.jpeg" alt="Mousse de Chocolate" loading="lazy" decoding="async" width="240" height="160">
+																	<div class="meta"><h4 data-i18n="p8.name">Postre Gourmet</h4><p data-i18n="p8.desc">Edición limitada, textura aterciopelada.</p><span class="price">€24.90</span></div>
+																</a>
+																<button class="buy-btn" data-id="p8" data-name="Postre Gourmet" data-price="24.9" data-i18n="buy">Comprar</button>
+														</div>
+						</div>
+				</div>
+</nav>
+</div>
+</header>
+
+<section class="hero container">
+<div class="hero-inner">
+<h1 class="reveal" data-i18n="hero.title">Auténtica pastelería francesa artesanal</h1>
+<p data-i18n="hero.blurb">Mousse delicados, tartas de limón equilibradas y tartas de frutas frescas elaboradas cada día con técnicas tradicionales francesas.</p>
+	<a class="btn" href="#productos" data-i18n="see_specialties">Ver especialidades</a>
+	</div>
+	<picture>
+		<img class="hero-img" loading="eager" decoding="async" width="1200" height="800" src="imaganes/1.jpeg" alt="Vitrina con tartas y pasteles franceses">
+	</picture>
+	</section>
+
+		<!-- Visible introduction copy (persistent) -->
+		<section class="intro-copy container">
+			<div class="intro-text-block">
+				<h2>PLAER DOLÇ</h2>
+				<p>Plaer dolç es una pastelería artesanal inspirada en la tradición de la repostería francesa. Cada receta está elaborada con ingredientes de calidad y cuidando cada detalle para ofrecer sabores delicados, elegantes y auténticos.</p>
+
+				<p>Nos especializamos en dulces clásicos de inspiración francesa, preparados de forma artesanal para garantizar una experiencia única en cada bocado.</p>
+
+				<p>En Plaer dolç creemos que el placer de un buen postre debe ser accesible y cómodo, por eso ofrecemos un servicio online con envío a domicilio, para que puedas disfrutar de nuestros dulces sin salir de casa.</p>
+
+				<p>Déjate llevar por el placer de lo dulce.</p>
+			</div>
+		</section>
+
+	<section id="productos" class="section container">
+<h2 class="reveal section-title" data-i18n="products.title">Especialidades</h2>
+
+<div class="grid">
+
+<div class="card">
+	<picture>
+		<img loading="lazy" decoding="async" width="1000" height="700" src="imaganes/2.jpeg" alt="Mousse de chocolate clásico">
+	</picture>
+	<h3 class="reveal" data-i18n="p1.name">Mousse de Chocolate</h3>
+	<p data-i18n="p1.desc">Mousse ligero y aireado elaborado con chocolate puro y cremoso, textura sedosa y sabor profundo.</p>
+</div>
+
+<div class="card">
+	<picture>
+		<img loading="lazy" decoding="async" width="1000" height="700" src="imaganes/3.jpeg" alt="Tarta de limón francesa">
+	</picture>
+	<h3 class="reveal" data-i18n="p2.name">Tarta de Limón</h3>
+	<p data-i18n="p2.desc">Equilibrio perfecto entre una crema de limón sedosa y una base crujiente, con el punto justo de acidez.</p>
+</div>
+
+<div class="card">
+	<picture>
+		<img loading="lazy" decoding="async" width="1000" height="700" src="imaganes/4.jpeg" alt="Tarta de frutas frescas">
+	</picture>
+	<h3 class="reveal" data-i18n="p3.name">Tarta de Frutas Frescas</h3>
+	<p data-i18n="p3.desc">Base crujiente, crema pastelera ligera y una selección de frutas de temporada para un acabado brillante y fresco.</p>
+</div>
+
+</div>
+</section>
+
+<section id="nosotros" class="section container about">
+	<picture>
+		<img loading="lazy" decoding="async" width="1200" height="800" src="imaganes/5.jpeg" alt="Chef pastelero trabajando">
+	</picture>
+	<div>
+		<h2 class="reveal" style="margin-bottom:15px;font-size:2rem">Nuestra Filosofía</h2>
+		<p>En PLAER DOLÇ combinamos tradición francesa con productos locales: ingredientes seleccionados, técnica precisa y una presentación elegante. Todo se elabora diariamente para ofrecer frescura y sabor auténtico.</p>
+		<p style="margin-top:10px">Buscamos que cada bocado sea una experiencia: refinado pero cercano.</p>
+	</div>
+	</section>
+
+	<section id="contacto" class="section container">
+	<h2 class="reveal" style="margin-bottom:20px;font-size:2rem">Contacto</h2>
+	<p><strong>Dirección:</strong> Calle Principal 123</p>
+	<p><strong>Teléfono:</strong> <a href="tel:+34600000000" style="color:inherit;text-decoration:underline">+34 600 000 000</a></p>
+	<p><strong>Email:</strong> <a href="mailto:contacto@placerdolc.example" style="color:inherit;text-decoration:underline">contacto@placerdolc.example</a></p>
+	<p style="margin-top:10px">Abierto de martes a domingo.</p>
+</section>
+
+<footer>
+	<div class="container footer-container">
+		<p data-i18n="footer.copy">© 2026 PLAER DOLÇ · Pastelería francesa artesanal</p>
+		<p style="font-size:0.9rem;color:#bbb" data-i18n="footer.follow">Síguenos en Instagram para ver creaciones diarias</p>
+	</div>
+</footer>
+
+
+<script src="main.js" defer></script>
+</div>
+</body>
+</html>

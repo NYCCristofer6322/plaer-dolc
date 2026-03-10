@@ -1,0 +1,239 @@
+:root{
+  --max-width:1100px;
+  --accent:#d4a373;
+  --bg:#fbf8f5;
+  --muted:#f5efe9;
+  --text:#333;
+  --muted-text:#72645a;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;margin:0}
+.site img{max-width:100%;display:block;object-fit:contain;object-position:center center;background:linear-gradient(180deg, rgba(250,247,242,0.0) 0%, rgba(250,247,242,0.6) 100%)}
+
+/* Language selector */
+.lang-selector{position:relative;display:inline-flex;align-items:center;gap:8px}
+.lang-button{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;min-width:44px}
+.lang-button img{width:18px;height:18px;border-radius:3px;display:block}
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);background:var(--bg);border:1px solid rgba(0,0,0,0.06);box-shadow:0 8px 24px rgba(10,10,10,0.08);padding:6px;border-radius:8px;min-width:160px;z-index:70;opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+.lang-menu.show{opacity:1;transform:none;pointer-events:auto}
+.lang-menu button{display:flex;align-items:center;gap:8px;width:100%;padding:8px;border:none;background:transparent;text-align:left;cursor:pointer}
+.lang-menu button:focus{outline:2px solid var(--accent);border-radius:6px}
+.lang-menu img{width:20px;height:14px;object-fit:cover}
+
+@media (max-width:600px){
+  .lang-menu{right:8px;left:auto;min-width:140px}
+  .lang-button{padding:6px}
+}
+
+/* Ensure header ordering: logo left, menu-button next, language selector at the far right */
+.menu-button{order:2}
+.lang-selector{order:3;margin-left:auto}
+.container{max-width:var(--max-width);margin:auto;padding:20px}
+.logo{font-family:'Playfair Display', serif;font-weight:700;font-size:1.45rem;letter-spacing:1px;color:#2b2b2b;text-decoration:none}
+.header-row{display:flex;align-items:center;gap:12px}
+.menu-panel{padding:12px}
+header{background:white;position:sticky;top:0;border-bottom:1px solid #eee;z-index:20}
+.site header nav{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative}
+/* ensure inner header row distributes space correctly */
+header .container nav > div{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%}
+.menu-button{background:transparent;border:0;font-size:1rem;cursor:pointer;color:inherit;padding:10px 14px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.menu-button:focus{outline:2px solid rgba(0,0,0,.12);outline-offset:2px}
+.menu-panel{position:absolute;top:calc(100% + 10px);left:50%;right:auto;background:white;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.12);min-width:220px;display:flex;flex-direction:column;padding:12px;z-index:50;opacity:0;transform:translateX(-50%) translateY(-6px);pointer-events:none;transition:opacity .28s ease,transform .28s ease;width:min(92vw,900px);max-width:900px}
+.menu-panel a{display:block;padding:10px 14px;color:var(--text);text-decoration:none;border-radius:8px;text-align:left}
+.menu-panel a:hover{background:var(--muted)}
+.menu-panel.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+
+/* Menu typography & product preview inside menu */
+.menu-panel{font-family:Inter,system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif}
+.menu-panel h3{font-family:'Playfair Display',serif;font-size:1rem;margin:8px 12px;color:#241a17}
+.products-preview{display:grid;grid-template-columns:1fr;gap:8px;padding-top:8px;border-top:1px solid #f3ebe2;margin-top:8px}
+.products-preview .product-link{display:block;padding:6px;border-radius:8px}
+.product-item{display:flex;gap:10px;align-items:center}
+.product-item img{width:64px;height:48px;object-fit:cover;border-radius:8px;flex:0 0 64px}
+.product-item .meta h4{font-family:'Playfair Display',serif;font-size:0.98rem;margin:0;color:#241a17}
+.product-item .meta p{margin:4px 0 0;font-size:0.82rem;color:var(--muted-text)}
+.product-link:focus{outline:2px solid var(--accent);outline-offset:2px}
+
+/* preview price styling */
+.product-item .meta .preview-price{display:inline-block;margin-top:8px;font-weight:700;color:#241a17;background:linear-gradient(180deg, rgba(244,238,232,0.5), rgba(250,247,242,0.6));padding:4px 8px;border-radius:8px;font-size:0.9rem}
+
+/* make menu preview compact on wide screens and two-col on larger */
+@media(min-width:1000px){
+  .products-preview{grid-template-columns:repeat(2,1fr);gap:10px}
+  .product-item img{width:72px;height:56px}
+}
+
+/* small screen: keep it single column and comfortable hit targets */
+@media(max-width:480px){
+  .products-preview{grid-template-columns:1fr;gap:8px}
+  .product-item .meta .preview-price{font-size:0.95rem;padding:6px 10px}
+  .product-item img{width:80px;height:60px}
+}
+
+/* Larger hit area for the menu button */
+.menu-button{padding:10px 14px}
+
+/* Ensure menu is full width on small screens and visually separate */
+@media(max-width:800px){
+  .menu-panel{left:12px;right:12px;top:64px;padding:14px}
+  .products-preview{grid-template-columns:1fr}
+  .product-item img{width:72px;height:56px}
+}
+
+/* Mobile: make menu panel fixed/full-width and easier to interact */
+@media(max-width:800px){
+  .menu-panel{position:fixed;left:12px;right:12px;top:64px;max-height:calc(100% - 88px);overflow:auto;border-radius:12px;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,0.18)}
+  .menu-panel a{padding:14px}
+  .menu-panel.show{opacity:1;transform:none}
+  .products-preview{grid-template-columns:1fr}
+  .product-item{align-items:flex-start}
+}
+.nav-links-inline{display:none}
+.nav-link{color:inherit;text-decoration:none;padding:8px 10px;border-radius:6px}
+.menu-button svg{width:26px;height:20px;display:block}
+
+/* Page transition */
+.site{opacity:1;transform:none;transition:opacity .36s ease,transform .18s ease}
+.site.fade-out{opacity:0;transform:translateY(6px)}
+
+/* Intro overlay (kept here so index.html works) */
+.intro-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#fffaf6 0%, #fff6f0 60%);display:flex;align-items:center;justify-content:center;z-index:120;transition:opacity var(--intro-duration,25s) cubic-bezier(.16,.84,.24,1)}
+.intro-overlay .brand{font-family:'Playfair Display',serif;font-size:2.4rem;color:#2b2b2b;text-align:center}
+.intro-overlay .brand small{display:block;font-family:Inter,system-ui;font-size:1rem;color:#7b6f66;margin-top:8px}
+.intro-overlay .brand h1{font-size:2.2rem;margin:0 0 6px}
+.intro-overlay .intro-text{max-width:820px;margin-top:12px;color:var(--muted-text);font-size:1.02rem;line-height:1.6;padding:6px 12px;text-align:left}
+.intro-overlay .brand{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.intro-overlay.fade-out{opacity:0}
+@media (prefers-reduced-motion:reduce){.intro-overlay{transition:none}}
+
+@media(max-width:800px){
+  .intro-overlay .brand{align-items:flex-start;padding:18px}
+  .intro-overlay .brand h1{font-size:1.6rem}
+  .intro-overlay .intro-text{font-size:0.98rem}
+}
+
+/* Persistent intro copy on homepage */
+.intro-copy{padding:44px 20px;background:transparent}
+.intro-copy .intro-text-block{max-width:980px;margin:0 auto;color:var(--muted-text);font-size:1.05rem;line-height:1.7;padding:8px 12px;border-radius:10px}
+.intro-copy h2{font-family:'Playfair Display',serif;font-size:1.6rem;color:#241a17;margin-bottom:12px}
+@media(max-width:800px){
+  .intro-copy{padding:26px 12px}
+  .intro-copy .intro-text-block{font-size:0.98rem;line-height:1.6}
+  .intro-copy h2{font-size:1.2rem}
+}
+
+/* Hero, cards, layout */
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:60px 20px}
+.hero img{width:100%;border-radius:12px;display:block;height:auto;object-fit:cover}
+.hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:2.5rem;margin-bottom:18px;line-height:1.05;color:#241a17}
+.hero p{color:var(--muted-text);font-size:1.05rem}
+.hero .hero-inner{background:linear-gradient(180deg, rgba(250,247,242,0.0) 0%, rgba(250,247,242,0.6) 100%);padding:8px;border-radius:8px}
+.btn{display:inline-block;background:var(--accent);color:white;padding:12px 22px;border-radius:8px;text-decoration:none;margin-top:10px}
+.btn:hover{filter:brightness(.95);transform:translateY(-2px)}
+.section{padding:60px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.06)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card h3{padding:15px;font-family:'Playfair Display',serif;font-weight:600;color:#2b2b2b}
+.card{transition:transform .28s ease,box-shadow .28s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.12)}
+.card p{padding:0 15px 20px 15px;font-size:0.95rem}
+.card-actions{padding:14px 15px 20px;display:flex;justify-content:center;align-items:center;border-top:1px solid #f3ebe2;background:linear-gradient(180deg,transparent, rgba(250,247,242,0.6));gap:18px}
+.card-actions .price{font-weight:700;color:#241a17;margin:0}
+.card-actions .buy-btn{padding:10px 14px;border-radius:10px}
+
+/* Ensure buy buttons are reachable on touch devices and accessible */
+.buy-btn{min-height:40px;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;font-size:0.95rem}
+.buy-btn:focus{outline:3px solid rgba(212,163,115,0.28);outline-offset:3px}
+.buy-btn[aria-pressed="true"]{filter:brightness(.92)}
+.card .price{display:block}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p{color:var(--muted-text);font-size:0.95rem}
+
+/* Larger grid gaps and centered content for specialty section */
+.grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+
+/* Make buy button accessible and consistent */
+.buy-btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;transition:transform .12s ease,filter .12s ease}
+.buy-btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+
+/* Improve product card image presentation */
+.card img{height:220px;object-fit:cover}
+
+/* Products page heading spacing */
+#productos h2{margin-bottom:28px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;border-radius:12px;height:auto;object-fit:cover}
+footer{background:#222;color:white;text-align:center;padding:30px 20px;margin-top:40px}
+
+/* Headings & reveal */
+h2{font-family:'Playfair Display',serif;font-weight:600;color:#2b2b2b;margin-bottom:18px}
+.section-title{margin-bottom:30px;font-size:2rem}
+.footer-container{display:flex;flex-direction:column;gap:8px;align-items:center}
+.hero-img{border-radius:12px}
+.justified{text-align:justify}
+.site .reveal{opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease}
+.is-loaded .reveal{opacity:1;transform:none}
+
+/* Mosaic for nosotros */
+.mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start}
+.mosaic-item{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;background:transparent;padding:6px;border-radius:10px}
+.mosaic-item.reverse{grid-template-columns:1fr 1fr}
+.mosaic-img img{width:100%;height:100%;border-radius:12px;object-fit:cover}
+.mosaic-text{padding:6px}
+.mosaic-text h3{font-family:'Playfair Display',serif;margin-bottom:8px}
+.mosaic-text p{color:var(--muted-text);text-align:justify}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;gap:24px;padding:30px 12px}
+  .about{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr}
+  .mosaic-item{grid-template-columns:1fr;gap:12px}
+  .card img{height:180px}
+}
+
+@media(max-width:480px){
+  .logo{font-size:1rem}
+  .lang-button{padding:6px 8px;font-size:0.9rem}
+  .menu-button{padding:8px}
+  .hero h1{font-size:1.4rem}
+  .hero p{font-size:0.95rem}
+  .card p{font-size:0.92rem}
+  .products-preview{gap:10px}
+  .product-item img{width:64px;height:56px}
+}
+
+/* Products dropdown preview inside menu */
+.products-preview{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:8px}
+.product-item{display:flex;gap:8px;align-items:center;padding:8px;border-radius:8px}
+.product-item img{width:72px;height:54px;object-fit:cover;border-radius:8px}
+.product-item .meta{flex:1}
+.product-item h4{margin:0;font-size:0.95rem;font-family:'Playfair Display',serif}
+.product-item p{margin:4px 0 0;font-size:0.85rem;color:var(--muted-text)}
+
+/* Constrain menu preview height to avoid huge panels and make it scrollable */
+.menu-panel .products-preview{max-height:320px;overflow:auto;padding-right:6px}
+
+/* ensure anchor inside product-item expands to fill available space so buy button remains reachable */
+.product-link{display:flex;align-items:center;gap:10px;flex:1;text-decoration:none;color:inherit}
+.product-item .meta{flex:1}
+.price{font-weight:600;color:var(--text);display:block;margin-top:6px}
+.buy-btn{background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+
+/* Modal / toast */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:200}
+.modal{background:#fff;padding:18px;border-radius:12px;max-width:420px;width:92%;box-shadow:0 20px 50px rgba(0,0,0,0.2)}
+.modal h3{margin:0 0 8px}
+.modal p{color:var(--muted-text);margin-bottom:12px}
+.modal .actions{display:flex;gap:8px;justify-content:flex-end}
+.toast{position:fixed;right:18px;bottom:18px;background:#222;color:#fff;padding:10px 14px;border-radius:8px;z-index:220}
+@media(max-width:500px){
+  .logo{font-size:1.05rem}
+  .card img{height:160px}
+  .hero h1{font-size:1.6rem}
+  .section{padding:30px 12px}
+}
+
+/* Very large screens */
+@media (min-width:1600px){:root{--max-width:1400px}.hero h1{font-size:3.4rem}.btn{padding:14px 26px;font-size:1.05rem}}
